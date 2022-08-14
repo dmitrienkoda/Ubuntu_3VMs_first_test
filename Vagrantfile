@@ -4,12 +4,12 @@
 # Префикс для Internal сети
 #INTERNAL_NET="192.168.15."
 # Домен который будем использовать для всей площадки
-# DOMAIN="sample.com"
+DOMAIN="local.test"
 
 # Массив из хешей, в котором заданы настройки для каждой виртуальной машины
 servers=[
   {
-    :hostname => "VM1",
+    :hostname => "VM1." + DOMAIN,
     :ip_int => "192.168.56.10",
     :ram => 4000,
     :cpu => 3,
@@ -17,7 +17,7 @@ servers=[
     :fwport => "8080"
   },
   {
-    :hostname => "VM2",
+    :hostname => "VM2." + DOMAIN,
     :ip_int => "192.168.56.20",
     :ram => 3000,
     :cpu => 2,
@@ -25,7 +25,7 @@ servers=[
     :fwport => "8081"
   },
   {
-    :hostname => "VM3",
+    :hostname => "VM3." + DOMAIN,
     :ip_int => "192.168.56.30",
     :ram => 2000,
     :cpu => 2,
